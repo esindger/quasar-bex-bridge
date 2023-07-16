@@ -37,11 +37,10 @@ export default bexBackground((bridge /* , allActiveConnections */) => {
     bridge.send('test', data).then((res) => {
       // NEVER REACHED
       console.log('[background] test RESOLVED', res)
+      respond()
     })
 
     console.log(`[background] call "test" ${eventResponseKey}, eventNames: ${JSON.stringify(bridge.eventNames())}`)
-
-    respond()
   })
 
   // setInterval(() => {
